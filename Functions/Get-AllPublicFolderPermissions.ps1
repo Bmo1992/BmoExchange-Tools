@@ -42,8 +42,7 @@ Function Get-AllPublicFolderPermissions
 
     ForEach($folder in $public_folders)
     {
-        Get-PublicFolderClientPermission $folder | `
-            Where
+        Get-PublicFolderClientPermission $folder | Where `
             {
                 $_.User -match $Identity
             } | `
