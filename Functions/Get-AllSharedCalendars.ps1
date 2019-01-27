@@ -24,8 +24,7 @@ Function Get-AllSharedCalendars
 
     $shared_mailboxes = ForEach($mailbox in $mailboxes)
     {
-        Get-MailboxFolderPermission (($mailbox)+":\Calendar") | `
-            ForEach
+        Get-MailboxFolderPermission (($mailbox)+":\Calendar") | ForEach `
             {    
                 if($_.User -notmatch "Default" -and $_.User -notmatch "Anonymous")
                 {
