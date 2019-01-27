@@ -27,7 +27,7 @@ Function Get-AllSharedCalendars
         Get-MailboxFolderPermission (($mailbox)+":\Calendar") | `
             ForEach
             {    
-                if($_.User -notmach "Default" -and $_.User -notmatch "Anonymous")
+                if($_.User -notmatch "Default" -and $_.User -notmatch "Anonymous")
                 {
                     Write-Output $mailbox
                 }
